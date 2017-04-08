@@ -1,5 +1,7 @@
-HanLP for nodejs
+HanLP 自然语言处理 for nodejs 
 =====
+* 支持中文分词（N-最短路分词、CRF分词、索引分词、用户自定义词典、词性标注），命名实体识别（中国人名、音译人名、日本人名、地名、实体机构名识别），关键词提取，自动摘要，短语提取，拼音转换，简繁转换，文本推荐，依存句法分析（MaxEnt依存句法分析、CRF依存句法分析）
+* 官方文档：http://www.hankcs.com/nlp/hanlp.html
 
 ### 环境要求
 	java 1.8
@@ -9,11 +11,11 @@ HanLP for nodejs
 	npm install
 
 ### 配置
-	配置文件路径 ./lib/src-java/hanLP.proerties
-	请修改 root 为您的目录路径
+	* 配置文件路径 ./lib/src-java/hanLP.proerties
+	* 请修改 root 为您的目录路径
 
-	词典文件目录 ./data
-	请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
+	* 词典文件目录 ./data
+	* 请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
 
 ### 使用
 
