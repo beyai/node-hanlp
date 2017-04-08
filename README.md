@@ -8,9 +8,12 @@ HanLP for nodejs
 ### 安装
 	npm install
 
-### 词典文件目录
-	./data
-	词典下载地址 (https://pan.baidu.com/s/1pKUVNYF)
+### 配置
+	配置文件路径 ./lib/src-java/hanLP.proerties
+	请修改 root 为您的目录路径
+
+	词典文件目录 ./data
+	请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
 
 ### 使用
 
@@ -28,8 +31,6 @@ let words = HanLP.Tokenizer("商品和服务");
 ```
 API
 =====
-详细使用请看 ./examples
-
 ### 标准分词 HanLP.Tokenizer( text )
 	@param String text [文本]
 	@ruten Object
@@ -155,8 +156,9 @@ let words = HanLP.Phrase("江西鄱阳湖干枯，中国最大淡水湖变成大
 	@param Number nTop [文章摘要条数，默认3条]
 	@ruten Object
 ```js
-let text = "据美国福克斯新闻报道，俄罗斯黑海舰队一艘护卫舰格里戈罗维奇海军上将号，正在驶向美国军舰发射导弹攻击叙利亚的区域。该护卫舰是俄罗斯最先进的护卫舰，2016年才刚服役，除防空、反舰导弹外，也可以发射巡航导弹。格里戈罗维奇海军上将号原定于本周访问叙利亚的塔尔图斯港。";
-let words = HanLP.Summary( text ,3 );
+let text = "据美国福克斯新闻报道，俄罗斯黑海舰队一艘护卫舰格里戈罗维奇海军上将号，正在驶向美国军舰发射导弹攻击叙利亚的区域。该护卫舰是俄罗斯最先进的护卫舰，2016年才刚服役，除防空、反舰导弹外，也可以发射巡航导弹。格里戈罗维奇海军上将号原定于本周访问叙利亚的塔尔图斯港。"
+
+let words = HanLP.Summary("text , 3);
 
 [
   '俄罗斯黑海舰队一艘护卫舰格里戈罗维奇海军上将号',
