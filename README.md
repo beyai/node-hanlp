@@ -21,8 +21,9 @@ HanLP 自然语言处理 for nodejs
 
 ```js
 const Hanlp = require("../lib/index");
+//分词库初始化及配置
 const HanLP = new Hanlp({
-	CustomDict : false, //使用自定义词典
+	CustomDict : true, //使用自定义词典
 	NameRecognize : true, //中国人名识别
 	TranslatedNameRecognize : true , //音译人名识别
 	JapaneseNameRecognize : true, //日本人名识别
@@ -31,6 +32,7 @@ const HanLP = new Hanlp({
 });
 let words = HanLP.Tokenizer("商品和服务");
 ```
+
 API
 =====
 ### 标准分词 HanLP.Tokenizer( text )
@@ -89,6 +91,22 @@ let words = HanLP.CRFTokenizer("你好，欢迎使用HanLP汉语处理包！");
   ...
 ]
 ```
+### 去除停用词分词 HanLP.NoStopWord( text )
+	@param String text [文本]
+	@ruten Object
+```js
+let words = HanLP.NoStopWord("你好，欢迎使用HanLP汉语处理包！");
+
+[
+  { word: '你好', nature: 'vl', offset: 0 },
+  { word: '欢迎', nature: 'v', offset: 0 },
+  { word: '使用', nature: 'v', offset: 0 },
+  { word: 'HanLP', nature: 'nz', offset: 0 },
+  { word: '汉语', nature: 'gi', offset: 0 },
+  ...
+]
+```
+
 ### 最短路分词 HanLP.ShortSegment( text )
 	@param String text [文本]
 	@ruten Object
@@ -160,7 +178,7 @@ let words = HanLP.Phrase("江西鄱阳湖干枯，中国最大淡水湖变成大
 ```js
 let text = "据美国福克斯新闻报道，俄罗斯黑海舰队一艘护卫舰格里戈罗维奇海军上将号，正在驶向美国军舰发射导弹攻击叙利亚的区域。该护卫舰是俄罗斯最先进的护卫舰，2016年才刚服役，除防空、反舰导弹外，也可以发射巡航导弹。格里戈罗维奇海军上将号原定于本周访问叙利亚的塔尔图斯港。"
 
-let words = HanLP.Summary(text , 3);
+let words = HanLP.Summary( text , 3);
 
 [
   '俄罗斯黑海舰队一艘护卫舰格里戈罗维奇海军上将号',
