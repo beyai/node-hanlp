@@ -1,6 +1,6 @@
 {
   "name": "node-hanlp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "HanLP for nodejs",
   "main": "index.js",
   "dependencies": {},
