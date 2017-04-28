@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Stars](https://img.shields.io/docker/stars/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Layers](https://images.microbadger.com/badges/image/samurais/hanlp-api.svg)](https://microbadger.com/#/images/samurais/hanlp-api)
+[![](https://images.microbadger.com/badges/version/samurais/hanlp-api.svg)](https://microbadger.com/images/samurais/hanlp-api "Get your own version badge on microbadger.com")
+
 HanLP 自然语言处理 for nodejs 
 =====
 * 支持中文分词（N-最短路分词、CRF分词、索引分词、用户自定义词典、词性标注），命名实体识别（中国人名、音译人名、日本人名、地名、实体机构名识别），关键词提取，自动摘要，短语提取，拼音转换，简繁转换，文本推荐，依存句法分析（MaxEnt依存句法分析、CRF依存句法分析）
@@ -12,12 +15,96 @@ HanLP 自然语言处理 for nodejs
 
 ### 配置
 	* 配置文件路径 ./lib/src-java/hanLP.proerties
-	* 请修改 root 为您的目录路径
+	* **请修改root为您的目录路径**
 
 	* 词典文件目录 ./data
 	* 请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
 
-### 使用
+
+### docker
+
+* build image 
+```
+cd node-hanlp
+./scripts/build-docker-image.sh
+```
+
+Or pull image
+```
+docker pull samurais/hanlp-api:1.0.0
+```
+
+* start container
+```
+docker run -it --rm -p 3002:3000 samurais/hanlp-api:1.0.0
+```
+
+* access service
+```
+POST /tokenizer HTTP/1.1
+Host: localhost:3002
+Content-Type: application/json
+
+{
+	"type": "nlp",
+	"content": "刘德华和张学友创作了很多流行歌曲"
+}
+
+RESPONSE
+{
+  "status": "success",
+  "data": [
+    {
+      "word": "刘德华",
+      "nature": "nr",
+      "offset": 0
+    },
+    {
+      "word": "和",
+      "nature": "cc",
+      "offset": 0
+    },
+    {
+      "word": "张学友",
+      "nature": "nr",
+      "offset": 0
+    },
+    {
+      "word": "创作",
+      "nature": "v",
+      "offset": 0
+    },
+    {
+      "word": "了",
+      "nature": "ule",
+      "offset": 0
+    },
+    {
+      "word": "很多",
+      "nature": "m",
+      "offset": 0
+    },
+    {
+      "word": "流行歌曲",
+      "nature": "n",
+      "offset": 0
+    }
+  ]
+}
+```
+
+* Other APIs
+
+    - tokenizer 分词
+    - keyword 关键词
+    - summary 摘要
+	- phrase 短语提取
+	- query 关键词、摘要
+	- conversion 简、繁、拼音转换
+
+[源码](/router.js)
+
+### node module
 
 ```js
 const Hanlp = require("../lib/index");
@@ -33,8 +120,6 @@ const HanLP = new Hanlp({
 let words = HanLP.Tokenizer("商品和服务");
 ```
 
-API
-=====
 ### 标准分词 HanLP.Tokenizer( text )
 	@param String text [文本]
 	@ruten Object
