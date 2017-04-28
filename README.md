@@ -1,4 +1,4 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Stars](https://img.shields.io/docker/stars/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Layers](https://images.microbadger.com/badges/image/samurais/hanlp-api.svg)](https://microbadger.com/#/images/samurais/hanlp-api)[![](https://images.microbadger.com/badges/version/samurais/hanlp-api.svg)](https://microbadger.com/images/samurais/hanlp-api "Get your own version badge on microbadger.com")
+[![Docker Pulls](https://img.shields.io/docker/pulls/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Stars](https://img.shields.io/docker/stars/samurais/hanlp-api.svg?maxAge=2592000)](https://hub.docker.com/r/samurais/hanlp-api/) [![Docker Layers](https://images.microbadger.com/badges/image/samurais/hanlp-api.svg)](https://microbadger.com/#/images/samurais/hanlp-api) [![](https://images.microbadger.com/badges/version/samurais/hanlp-api.svg)](https://microbadger.com/images/samurais/hanlp-api "Get your own version badge on microbadger.com")
 
 HanLP 自然语言处理 for nodejs 
 =====
@@ -39,6 +39,7 @@ docker run -it --rm -p 3002:3000 samurais/hanlp-api:1.0.0
 ```
 
 * access service
+
 ```
 POST /tokenizer HTTP/1.1
 Host: localhost:3002
