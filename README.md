@@ -9,17 +9,6 @@ HanLP 自然语言处理 for nodejs
 	java 1.8
 	nodejs >= 6
 
-### 安装
-	npm install
-
-### 配置
-	* 配置文件路径 ./lib/src-java/hanLP.proerties
-	* **请修改root为您的目录路径**
-
-	* 词典文件目录 ./data
-	* 请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
-
-
 ### docker
 
 * build image 
@@ -106,8 +95,23 @@ RESPONSE
 
 ### node module
 
+* Install
+
+```
+npm install node-hanlp
+```
+
+* Config
+    - 配置文件路径 node_modules/node-hanlp/lib/src-java/hanLP.proerties
+	- **请修改root为您的目录路径**
+
+	- 词典文件目录 ./data
+	- 请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data (约800MB文件) 目录下
+
+* Usage
+
 ```js
-const Hanlp = require("../lib/index");
+const Hanlp = require("node-hanlp");
 //分词库初始化及配置
 const HanLP = new Hanlp({
 	CustomDict : true, //使用自定义词典
