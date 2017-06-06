@@ -209,4 +209,4 @@ let words = HanLP.Summary( text , 3);
 	@ruten Object
 
 ### 
-[Wechat](http://www.majingduo.com/data/WechatIMG72.jpg)
+	![Wechat](http://www.majingduo.com/data/WechatIMG72.jpg)
