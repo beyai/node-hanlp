@@ -10,7 +10,7 @@ HanLP v1.5.0 自然语言处理 for nodejs
 	nodejs >= 6
 
 ### 安装
-	npm install
+	npm install hanlp --save
 
 ### 配置
 	* 请修改 hanLP.proerties 文件中 root 为您数据的目录路径
