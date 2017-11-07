@@ -1,7 +1,7 @@
 HanLP v1.5.0 自然语言处理 for nodejs 
 =====
 * 支持中文分词（N-最短路分词、CRF分词、索引分词、用户自定义词典、词性标注），命名实体识别（中国人名、音译人名、日本人名、地名、实体机构名识别），关键词提取，自动摘要，短语提取，拼音转换，简繁转换，文本推荐，依存句法分析（MaxEnt依存句法分析、CRF依存句法分析）
-* 官方文档：http://www.hankcs.com/nlp/hanlp.html
+* 官方文档：[https://github.com/hankcs/HanLP/blob/master/README.md](https://github.com/hankcs/HanLP/blob/master/README.md)
 * 修改 java 源码添加 init 方法,自定义引入 hanLP.proerties 配置文件路径
 
 
@@ -13,15 +13,13 @@ HanLP v1.5.0 自然语言处理 for nodejs
 	npm install hanlp --save
 
 ### 配置
-	* 请修改 hanLP.proerties 文件中 root 为您数据的目录路径
-
-	* 词典文件目录 ./data
-	* 请下载词典 https://pan.baidu.com/s/1pKUVNYF 放入 ./data 目录下
+1. 配置文件: [hanlp.properties](https://github.com/beyai/node-hanlp/blob/master/hanlp.properties)，配置文件的作用是告诉HanLP数据包的位置，只需修改第一行
+2. 数据包: [data.zip](https://github.com/hankcs/HanLP/releases) 
 
 ### 使用
 
 ```js
-const Hanlp = require("../lib/index");
+const Hanlp = require("hanlp");
 
 //分词库初始化及配置
 const HanLP = new Hanlp({
