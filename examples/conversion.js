@@ -7,7 +7,10 @@
 
 
 const Hanlp = require("../lib/index");
-const HanLP = new Hanlp();
+const path 	= require("path");
+const HanLP = new Hanlp({
+	proerties : path.resolve( __dirname , "../hanlp.properties")
+});
 
 // [ConversionFont 简繁转换]
 console.log("\n============================= 繁体 =============================")

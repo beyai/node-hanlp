@@ -6,7 +6,11 @@
  */
 
 const Hanlp = require("../lib/index");
-const HanLP = new Hanlp();
+const path 	= require("path");
+
+const HanLP = new Hanlp({
+	proerties : path.resolve( __dirname , "../hanlp.properties")
+});
 
 var text  = [
     '腾讯科技讯据外电报道美国电动车制造商特斯拉周日表示该公司第一季度电动车的交付总量同比增长69%，达到创纪录的2.5万辆，超出市场分析师此前的预期。',
