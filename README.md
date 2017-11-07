@@ -23,7 +23,7 @@ const Hanlp = require("hanlp");
 
 //分词库初始化及配置
 const HanLP = new Hanlp({
-    proerties : "配置文件绝对路径", //新增，方便配置，
+	proerties : "/root/hanlp/hanlp.properties", //配置文件绝对路径，
 	CustomDict : true, //使用自定义词典
 	NameRecognize : true, //中国人名识别
 	TranslatedNameRecognize : true , //音译人名识别
